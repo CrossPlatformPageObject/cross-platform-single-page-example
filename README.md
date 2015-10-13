@@ -1,0 +1,1 @@
+For more information check out (blog)[http://pritibiyani.github.io/blog/speaking-at-vodqa-banglore/]
