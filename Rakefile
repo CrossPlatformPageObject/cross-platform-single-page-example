@@ -1,0 +1,1 @@
+Dir.glob('rake_tasks/*.rake').each { |r| import r }

@@ -1,0 +1,26 @@
+class <%=@class_name%> < Page
+  def initialize
+    @id         = PageId.new({
+                              web:   "",
+                              ios:   "",
+                              droid: ""
+                             })
+    @done_button = Field.transition_element({
+                                web:    "//div[@id='seat_%']",
+                                ios:    "navigationButton marked:'DONE'",
+                                droid:  "* marked:'Done'"
+                               },
+                               {
+                                to:  <%=@post_page_class%>
+                               })
+
+    super('<%=@page_name%>')
+  end
+
+  def done
+    @done_button.click
+  end
+
+end
+
+PageRegistry.registerPage(<%=@class_name%>)

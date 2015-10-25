@@ -1,5 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'calabash-android', '0.5.5'
-gem 'calabash-cucumber','0.14.3'
+gem 'bundler'
+gem 'rspec'
+gem 'calabash-android'
+gem 'calabash-cucumber'
+gem 'cucumber'
 gem 'pry'
