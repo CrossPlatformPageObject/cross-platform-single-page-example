@@ -1,5 +1,4 @@
 class Driver
-	include Watir::Wait
 	include Cucumber::RbSupport::RbWorld
 
 	@@DRIVER         = nil
