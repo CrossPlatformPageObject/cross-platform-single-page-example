@@ -21,14 +21,10 @@ class Driver
 		PLATFORM
 	end
 
-	def click
-		locator = get_locator_from_id_map
+	def click(id_map)
+		locator = id_map[driver_key]
 		return if locator.empty?
 		touch_element locator
 	end
 
-	private
-	def get_locator_from_id_map
-
-	end
 end

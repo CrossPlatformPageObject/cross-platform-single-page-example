@@ -40,8 +40,6 @@ class PageObjectTemplate
   end
 
   def create_folder(folder_path)
-    require 'pry'
-    binding.pry
     Dir.mkdir folder_path unless folder_exists? folder_path
   end
 

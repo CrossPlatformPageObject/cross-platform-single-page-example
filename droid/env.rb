@@ -1,8 +1,8 @@
-require 'watir-webdriver'
+require 'calabash-android/cucumber'
+require 'pry'
 
 PROJECT_ROOT = '/Users/Priti/projects/POP/cross_platform_single_page'
-DRIVER_PATH ='/Applications/chromedriver'
-
+APK_PATH     = 'prebuilt/Foodoo.apk'
 
 def require_common_files
 	Dir["#{PROJECT_ROOT}/app/page/*.rb"].each { |file| require "#{file}" }
@@ -14,35 +14,27 @@ def require_common_files
 	Dir["#{PROJECT_ROOT}/step_definitions/*.rb"].each { |file| require "#{file}" }
 end
 
+def require_droid_files
+	Dir["#{PROJECT_ROOT}/droid/framework/*.rb"].each { |file| require "#{file}" }
+end
+
 def build_pages
 	PageRegistry.build
 	App.set_current_page(FoodList)
 end
 
-def create_driver
-	Selenium::WebDriver::Chrome::Service.executable_path = DRIVER_PATH
-	prefs = {
-		:download => {
-			prompt_for_download: false,
-			default_directory:   DRIVER_PATH
-		}
-	}
-	b = Watir::Browser.new :chrome, :prefs => prefs
-	b
+def resign_app
+	command = "calabash-android resign #{APK_PATH}"
+	sh command
 end
 
 require_common_files
+require_droid_files
 build_pages
-B = create_driver
+# resign_app
 
-Before do |scenario|
-	B.cookies.clear
-	B.goto 'http://localhost:3000/items/index'
-	B.wait
-end
-
-After do |scenario|
-	# B.close
-end
+device  = `adb devices`.scan(/\n(.*)\t/).flatten.first
+command = "calabash-android run #{APK_PATH} -p report --format pretty  ADB_DEVICE_ARG=#{device}"
+# bash command
 
 

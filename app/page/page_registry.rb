@@ -35,12 +35,12 @@ class PageRegistry
 		end
 
 		def lookup_by_class_name(page_class)
-			match = @page_objs.find { |pageName, pageObj| pageObj.class == page_class }
+			match = @page_objs.find { |pageName, page_obj| page_obj.class == page_class }
 			match[1]
 		end
 
 		def lookup_by_page_name(page_name)
-			@page_objs[pageName]
+			@page_objs[page_name]
 		end
 
 	end
