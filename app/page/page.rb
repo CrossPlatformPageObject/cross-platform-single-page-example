@@ -8,7 +8,7 @@ class Page
 	end
 
 	def current_page?(wait=40)
-		@id.exists? wait
+		@id.exists?
 	end
 
 	def has_error?

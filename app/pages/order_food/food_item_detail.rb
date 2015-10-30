@@ -6,12 +6,16 @@ class FoodItemDetail < Page
                               droid: "* id:'vgFoodItemDetails'"
                              })
 
-    # @add_to_cart = Field.element({
-    #                              })
+    @add_to_cart = Field.element({
+                                   droid: "* id:'btnAddToCart'",
+                                   web: "",
+                                   ios: ""
+                                 })
     super('food item detail')
   end
 
   def add_to_cart
+    binding.pry
     @add_to_cart.click
     back
   end

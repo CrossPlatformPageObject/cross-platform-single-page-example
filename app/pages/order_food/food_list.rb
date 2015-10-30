@@ -18,7 +18,6 @@ class FoodList < Page
 	end
 
 	def order_items(order_items)
-		binding.pry
 		order_items.each do |item|
 			@food_item.click item.item_name
 			App.food_item_detail_page.add_to_cart

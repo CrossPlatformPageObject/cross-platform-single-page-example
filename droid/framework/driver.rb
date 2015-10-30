@@ -38,4 +38,10 @@ class Driver
 		end
 		touch_element locator
 	end
+
+	def back
+		press_back_button
+		sleep(0.3)
+	end
+
 end
