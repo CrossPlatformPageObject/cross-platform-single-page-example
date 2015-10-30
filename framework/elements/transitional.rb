@@ -1,6 +1,6 @@
 module Transitional
 
-	def get_matching_page(transitions)
+	def transition(transitions)
 		return page(transitions[:default]) unless transitions[:default].nil?
 		next_page_transitions = transitions[:to]
 		# wait for 60 sec trying to find if any of the next page transitions has loaded

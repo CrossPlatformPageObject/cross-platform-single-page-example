@@ -1,6 +1,7 @@
 require 'calabash-android/operations'
-
+require_relative '../../droid/interaction_helper'
 class Driver
+	include InteractionHelper
 	include Calabash::Android::Operations
 	@@DRIVER = nil
 	PLATFORM = :droid
@@ -18,6 +19,7 @@ class Driver
 	end
 
 	def exists?(id_map)
+		binding.pry
 		begin
 			return false if id_map[driver_key].blank?
 			wait_for_element_to_appear(id_map[driver_key])
@@ -25,15 +27,15 @@ class Driver
 		rescue WaitError
 			false
 		end
+	end
 
-		def click(id_map)
-			locator = id_map[driver_key]
-			return if locator.empty?
-			begin
-				scroll_to locator
-			rescue RuntimeError
-			end
-			touch_element locator
+	def click(id_map)
+		locator = id_map[driver_key]
+		return if locator.empty?
+		begin
+			scroll_to locator
+		rescue RuntimeError
 		end
+		touch_element locator
 	end
 end

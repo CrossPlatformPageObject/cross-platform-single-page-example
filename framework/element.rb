@@ -1,7 +1,6 @@
 require_relative 'elements/transitional'
 
 class Element
-	include Transitional
 
 	def initialize(id_map)
 		@id_map = id_map
@@ -9,7 +8,7 @@ class Element
 	end
 
 	def exists?(wait=40, *args)
-		@driver.exists?(interpolate_locators_with_params(*args), wait)
+		@driver.exists?(interpolate_locators_with_params(*args))
 	end
 
 	def does_not_exist?(wait=40, *args)

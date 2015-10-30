@@ -10,4 +10,5 @@ class PageId
 	def exists?
 		@driver.exists?(@id_map)
 	end
+
 end
