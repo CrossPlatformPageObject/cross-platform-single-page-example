@@ -5,12 +5,12 @@
 
 `bundle exec cucumber -r web`
 
-2. FOr iOS:
+2. For iOS:
 
-``
+`bundle exec cucumber -p ios`
 
 3. For android:
 
-``
+`calabash-android run prebuilt/FoodX-droid.apk -p android`
 
 For more information check out [blog](http://pritibiyani.github.io/blog/speaking-at-vodqa-banglore/)
