@@ -15,7 +15,6 @@ class FoodItemDetail < Page
   end
 
   def add_to_cart
-    binding.pry
     @add_to_cart.click
     back
   end

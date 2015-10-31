@@ -5,7 +5,13 @@ module Transitional
 		next_page_transitions = transitions[:to]
 		# wait for 60 sec trying to find if any of the next page transitions has loaded
 		matching_next_page    = wait_till_next_page_loads(next_page_transitions, transitions[:error])
+		set_as_current_page(matching_next_page.class)
 		matching_next_page
+	end
+
+	private
+	def set_as_current_page(page)
+		App.set_current_page page
 	end
 
 	def wait_till_next_page_loads(next_page_transitions, error_page)

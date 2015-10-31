@@ -7,7 +7,7 @@ class Menu < Page
 		@id = PageId.new({
 			                 :web   => "//div[@id='home']//ul[@id='home_options']",
 			                 :ios   => "tabBarButtonLabel marked:'Book'",
-			                 :droid => "* id:'drawer_items_list'"
+			                 :droid => "* contentDescription:'Open navigation drawer'"
 		                 })
 
 		@navigation_menu           = Field.transition_element({
@@ -28,7 +28,8 @@ class Menu < Page
 		                                                      })
 
 		@menu_items = {
-			FOOD_ITEMS => MenuItem.new(FOOD_ITEMS, FoodList)
+			FOOD_ITEMS => MenuItem.new(FOOD_ITEMS, FoodList),
+			CART_ITEM  => MenuItem.new(CART_ITEM, Cart)
 		}
 
 		super('Menu')
@@ -44,11 +45,12 @@ class Menu < Page
 
 	def launch(item_name)
 		puts "item #{item_name}"
-		# menu_item = @menu_items[item_name]
-		# show_secondary if menu_item.is_secondary?
-		# scroll_screen_downwards unless menu_item.visible?
-		# menu_item.click
+		menu_item = @menu_items[item_name]
+		show_secondary if menu_item.is_secondary?
+		menu_item.click
 	end
 
 end
+
+PageRegistry.register_page(Menu)
 

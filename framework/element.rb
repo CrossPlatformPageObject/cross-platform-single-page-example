@@ -15,24 +15,11 @@ class Element
 		@driver.does_not_exist?(interpolate_locators_with_params(*args), wait)
 	end
 
-	def execute_js(*args)
-		@driver.execute_js(interpolate_locators_with_params(*args))
-	end
-
 	def wait_while_present opts
 		@driver.wait_while_present(@id_map, opts)
 	end
 
-	def execute_js_on_webview(*args)
-		@driver.execute_js_on_webview interpolate_locators_with_params(*args)
-	end
-
-	def css_class(*args)
-		@driver.css_class(interpolate_locators_with_params(*args))
-	end
-
 	def text(*args)
-		scroll_to(*args)
 		@driver.text(interpolate_locators_with_params(*args))
 	end
 

@@ -11,7 +11,7 @@ class MenuItem
 			{
 				:web   => "//div[@id='home']//ul[@id='home_options']//li[@class='#{@name.downcase}']",
 				:ios   => "label marked:'#{@name}'",
-				:droid => "WhitneyDefaultTextView id:'drawer_item_text' text:'#{@name}'"
+				:droid => "#{@name}"
 			},
 			{
 				:to => @page
@@ -19,12 +19,11 @@ class MenuItem
 	end
 
 	def click
-		@menu_button.click
+		@menu_button.click_menu
 	end
 
 	def visible?
-		return false if @name=='Parking Reminder'
-		@menu_button.exists?(2)
+		@menu_button.exists?
 	end
 
 	def is_secondary?

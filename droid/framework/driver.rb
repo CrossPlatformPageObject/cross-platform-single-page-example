@@ -19,7 +19,6 @@ class Driver
 	end
 
 	def exists?(id_map)
-		binding.pry
 		begin
 			return false if id_map[driver_key].blank?
 			wait_for_element_to_appear(id_map[driver_key])
@@ -39,9 +38,19 @@ class Driver
 		touch_element locator
 	end
 
+	def click_menu(id_map)
+		locator = id_map[driver_key]
+		tap_mark locator
+	end
+
 	def back
 		press_back_button
 		sleep(0.3)
+	end
+
+	def text(id_map)
+		locator = id_map[driver_key]
+		query(locator, :text)
 	end
 
 end

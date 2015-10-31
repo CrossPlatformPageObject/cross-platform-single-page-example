@@ -17,8 +17,8 @@ class TransitionElement < Element
 		end
 	end
 
-	def exists?(wait=40, *args)
-		@driver.exists?(interpolate_locators_with_params(*args), wait)
+	def exists?(*args)
+		@driver.exists?(interpolate_locators_with_params(*args))
 	end
 
 	def click(*locator_params)
@@ -26,6 +26,10 @@ class TransitionElement < Element
 		transition(@transitions)
 	end
 
+	def click_menu(*locator_params)
+		@driver.click_menu(interpolate_locators_with_params(*locator_params))
+		transition(@transitions)
+	end
 
 
 end

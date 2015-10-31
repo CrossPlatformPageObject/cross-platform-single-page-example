@@ -5,6 +5,8 @@ Feature: As a user, I should be able to order food with different payment option
     Given As a user I order following items:
       | item_name     | quantity |
       | Masala Dosa   | 2        |
-      | Filter Coffee | 2        |
-    Then I should see following items in cart
+      | Filter Coffee | 1        |
+    Then I should see above items in cart
+
+
 
