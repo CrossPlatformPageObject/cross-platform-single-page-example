@@ -1,5 +1,5 @@
 module FileInclusion
-	PROJECT_ROOT = '/Users/Priti/projects/POP/cross_platform_single_page'
+	PROJECT_ROOT = Dir.pwd
 
 	def self.require_common_files
 		common_directories =%w(/app/page/*.rb /app/pages/**/*.rb /app/*.rb /app/models/*.rb /framework/*.rb /framework/elements/*.rb /step_definitions/*.rb)

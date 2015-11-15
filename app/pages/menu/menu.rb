@@ -44,7 +44,6 @@ class Menu < Page
 	end
 
 	def launch(item_name)
-		puts "item #{item_name}"
 		menu_item = @menu_items[item_name]
 		show_secondary if menu_item.is_secondary?
 		menu_item.click

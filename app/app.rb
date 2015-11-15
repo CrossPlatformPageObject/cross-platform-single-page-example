@@ -24,7 +24,6 @@ class App
 				}
 			end
 		end
-		PROJECT_ROOT = '/Users/Priti/projects/POP/cross_platform_single_page'
-		configure_shorthands "#{PROJECT_ROOT}/app/pages/**/*.rb"
+		configure_shorthands "#{Dir.pwd}/app/pages/**/*.rb"
 	end
 end
