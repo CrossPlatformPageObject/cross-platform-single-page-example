@@ -11,87 +11,20 @@ class Element
 		@driver.exists?(interpolate_locators_with_params(*args))
 	end
 
-	def does_not_exist?(wait=40, *args)
-		@driver.does_not_exist?(interpolate_locators_with_params(*args), wait)
-	end
-
-	def wait_while_present opts
-		@driver.wait_while_present(@id_map, opts)
-	end
-
 	def text(*args)
 		@driver.text(interpolate_locators_with_params(*args))
-	end
-
-	def text_last(*args)
-		scroll_to(*args)
-		@driver.text_last(interpolate_locators_with_params(*args))
 	end
 
 	def await(*args)
 		@driver.await(interpolate_locators_with_params(*args))
 	end
 
-	def wait_for_text_change
-		current_text = text
-		sleep 0.5 while (current_text == text)
-	end
-
-	def wait_for_text_change
-		current_text = text
-		sleep 0.5 while (current_text == text)
-	end
-
-	def wait_to_have_text(desired_text)
-		Timeout::timeout(10) do
-			while text != desired_text
-				sleep 1
-			end
-		end
-	end
-
-	def web_view_text(*args)
-		@driver.web_view_text(interpolate_locators_with_params(*args))
-	end
-
 	def click(*locator_params)
 		@driver.click(interpolate_locators_with_params(*locator_params))
 	end
 
-	def scroll_to(*locator_params)
-		@driver.go_till_element(interpolate_locators_with_params(*locator_params))
-	end
-
-	def scroll_up
-		@driver.scroll_top(@id_map)
-	end
-
-	def scroll(direction)
-		@driver.scroll_element(@id_map, direction)
-	end
-
-	def scroll_view(direction)
-		@driver.scroll_view(direction)
-	end
-
-	def execute_query(*args)
-		@driver.execute_query(@id_map, *args)
-	end
-
-	def selected?(*locator_params)
-		@driver.selected?(interpolate_locators_with_params(*locator_params))
-	end
-
 	def touch(*locator_params)
 		@driver.touch_screen(interpolate_locators_with_params(*locator_params))
-	end
-
-	def get_matching_text(*locator_params)
-		@driver.get_all_matching_text(interpolate_locators_with_params(*locator_params))
-	end
-
-	def is_visible?
-		@driver.alert_exists?(@id_map)
 	end
 
 	protected
