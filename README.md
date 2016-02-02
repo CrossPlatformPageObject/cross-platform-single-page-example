@@ -13,4 +13,4 @@
 
 `calabash-android run prebuilt/FoodX-droid.apk -p android`
 
-For more information check out [blog](http://pritibiyani.github.io/blog/speaking-at-vodqa-banglore/)
+For more information check out [blog](https://pritibiyani.github.io/blog/speaking-at-vodqa-banglore/)

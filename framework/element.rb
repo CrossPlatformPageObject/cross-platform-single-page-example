@@ -32,7 +32,6 @@ class Element
 		expanded_locators = {}
 		values = values.flatten
 		@id_map.each do |k, v|
-			v.is_a?(Hash) ? locator = v[ENV['APP_VARIANT'].to_sym] : locator = v
 			expanded_locators[k] = locator % values if (locator.is_a?(String) and k.eql? @driver.driver_key)
 		end
 		expanded_locators
