@@ -10,22 +10,8 @@ class Menu < Page
 			                 :droid => "* contentDescription:'Open navigation drawer'"
 		                 })
 
-		@navigation_menu           = Field.transition_element({
-			                                                      :web   => '',
-			                                                      :ios   => '',
-			                                                      :droid => "* contentDescription:'Open navigation drawer'",
-		                                                      },
-		                                                      {
-			                                                      :default => self
-		                                                      })
-		@navigation_secondary_menu = Field.transition_element({
-			                                                      :web   => '',
-			                                                      :droid => '',
-			                                                      :ios   => "* marked:'More'"
-		                                                      },
-		                                                      {
-			                                                      :default => self
-		                                                      })
+		@navigation_menu           = Field.transition_element({ droid: "* contentDescription:'Open navigation drawer'" }, { default: self })
+		@navigation_secondary_menu = Field.transition_element({ ios: "* marked:'More'" }, { default: self })
 
 		@menu_items = {
 			FOOD_ITEMS => MenuItem.new(FOOD_ITEMS, FoodList),
