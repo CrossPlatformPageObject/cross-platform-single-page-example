@@ -19,7 +19,7 @@ module Transitional
 		error_page                 = page(error_page)
 		has_error, found_next_page = false, false
 		begin
-			wait_for_element(timeout: 30) do
+			wait_for_element(timeout: 60) do
 				found_next_page = next_pages.any? { |page| page.current_page? false }
 				has_error       = error_page.has_error? if error_page && found_next_page==false
 				found_next_page or has_error
