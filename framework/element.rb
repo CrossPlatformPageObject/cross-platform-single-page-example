@@ -31,7 +31,7 @@ class Element
 	def interpolate_locators_with_params(*values)
 		expanded_locators = {}
 		values = values.flatten
-		@id_map.each do |k, v|
+		@id_map.each do |k, locator|
 			expanded_locators[k] = locator % values if (locator.is_a?(String) and k.eql? @driver.driver_key)
 		end
 		expanded_locators
