@@ -20,15 +20,14 @@ class Driver
 	def click(id_map)
 		locator = id_map[DRIVER_KEY]
 		return if locator.empty?
-		B.element(get_selector(locator) => locator).wait_until_present
-		B.element(get_selector(locator) => locator).click
+		B.element(locator).wait_until_present
+		B.element(locator).click
 	end
 
 	def exists?(id_map, wait=true)
 		locator = id_map[driver_key]
 		return false if locator.blank?
 		begin
-			locator = "(#{locator})"
 			B.element(locator).wait_until_present if wait
 			B.element(locator).present?
 		rescue TimeoutError, Selenium::WebDriver::Error::UnhandledAlertError

@@ -1,7 +1,8 @@
 class Cart < Page
   def initialize
     @id         = PageId.new({
-                              web:   "",
+
+                              web:   {text: 'Your Purchased Items:'},
                               ios:   "",
                               droid: "* {text CONTAINS 'Cart Items'}"
                              })

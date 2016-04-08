@@ -32,8 +32,11 @@ class Element
 		expanded_locators = {}
 		values = values.flatten
 		@id_map.each do |k, locator|
-			expanded_locators[k] = locator % values if (locator.is_a?(String) and k.eql? @driver.driver_key)
+			locator = locator % values if locator.is_a?(String)
+			locator = locator.each{|k,v| locator[k] = v % values} if locator.is_a?(Hash)
+			expanded_locators[k] =  locator
 		end
 		expanded_locators
 	end
+
 end
