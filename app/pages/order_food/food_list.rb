@@ -1,12 +1,12 @@
 class FoodList < Page
 	def initialize
 		@id        = PageId.new({
-			                        web:   "",
+			                        web:   ":text => 'Food Items:'",
 			                        ios:   "* title:'Food Items'",
 			                        droid: ""
 		                        })
 		@food_item = Field.transition_element({
-			                                      web:   "",
+			                                      web:   ":text => '%s'",
 			                                      droid: "* {text CONTAINS '%s'}",
 			                                      ios:   "UITableViewLabel {text CONTAINS '%s'}"
 		                                      },

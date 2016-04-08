@@ -9,5 +9,4 @@ module InteractionHelper
 		wait_for_elements_exist(locator)
 	end
 
-
 end

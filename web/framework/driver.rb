@@ -1,8 +1,8 @@
 class Driver
 	include Cucumber::RbSupport::RbWorld
 
-	@@DRIVER   = nil
-	DRIVER_KEY = :web
+	@@DRIVER         = nil
+	DRIVER_KEY       = :web
 	XPATH_IDENTIFIER = '//'
 
 	def self.platform
@@ -22,6 +22,23 @@ class Driver
 		return if locator.empty?
 		B.element(get_selector(locator) => locator).wait_until_present
 		B.element(get_selector(locator) => locator).click
+	end
+
+	def exists?(id_map, wait=true)
+		locator = id_map[driver_key]
+		return false if locator.blank?
+		begin
+			locator = "(#{locator})"
+			B.element(locator).wait_until_present if wait
+			B.element(locator).present?
+		rescue TimeoutError, Selenium::WebDriver::Error::UnhandledAlertError
+			p "exists error #{locator}"
+			false
+		end
+	end
+
+	def back
+		B.back
 	end
 
 	private

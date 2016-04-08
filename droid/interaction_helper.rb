@@ -1,5 +1,4 @@
 module InteractionHelper
-
 	def touch_element(locator)
 		wait_for_element_to_appear locator
 		touch locator

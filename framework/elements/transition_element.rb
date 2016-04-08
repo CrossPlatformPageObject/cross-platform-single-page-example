@@ -31,5 +31,4 @@ class TransitionElement < Element
 		transition(@transitions)
 	end
 
-
 end
