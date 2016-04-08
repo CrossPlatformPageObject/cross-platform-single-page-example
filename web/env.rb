@@ -1,48 +1,37 @@
 require 'watir-webdriver'
+require_relative '../support/file_inclusion'
+require_relative '../support/page_building_helper'
 
-PROJECT_ROOT = '/Users/Priti/projects/POP/cross_platform_single_page'
-DRIVER_PATH ='/Applications/chromedriver'
 
+FileInclusion.require_common_files
+FileInclusion.require_platform_specific_files 'droid'
+PageBuildingHelper.build_pages
+PageBuildingHelper.set_home_page_as_food_list
 
-def require_common_files
-	Dir["#{PROJECT_ROOT}/app/page/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/app/pages/**/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/app/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/app/models/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/framework/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/framework/elements/*.rb"].each { |file| require "#{file}" }
-	Dir["#{PROJECT_ROOT}/step_definitions/*.rb"].each { |file| require "#{file}" }
-end
-
-def build_pages
-	PageRegistry.build
-	App.set_current_page(FoodList)
-end
+DRIVER_PATH  ='/Applications/chromedriver'
 
 def create_driver
 	Selenium::WebDriver::Chrome::Service.executable_path = DRIVER_PATH
 	prefs = {
-		:download => {
+		download: {
 			prompt_for_download: false,
 			default_directory:   DRIVER_PATH
 		}
 	}
-	b = Watir::Browser.new :chrome, :prefs => prefs
-	b
+	browser = Watir::Browser.new :chrome, :prefs => prefs
+	browser
 end
 
-require_common_files
-build_pages
-B = create_driver
+browser = create_driver
 
 Before do |scenario|
-	B.cookies.clear
-	B.goto 'http://localhost:3000/items/index'
-	B.wait
+	browser.cookies.clear
+	browser.goto 'http://localhost:3000'
+	browser.wait
 end
 
 After do |scenario|
-	# B.close
+	browser.close
 end
 
 
