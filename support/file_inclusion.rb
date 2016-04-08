@@ -2,8 +2,10 @@ module FileInclusion
 	PROJECT_ROOT = Dir.pwd
 
 	COMMON_DIR = %w(
-		/app/page/*.rb /app/pages/**/*.rb
-	  /app/*.rb /app/models/*.rb
+		/app/page/*.rb
+	  /app/pages/**/*.rb
+	  /app/*.rb
+		/app/models/*.rb
 	  /framework/*.rb
 		/framework/elements/*.rb
 		/step_definitions/*.rb)
@@ -15,7 +17,7 @@ module FileInclusion
 	end
 
 	def self.require_platform_specific_files(platform)
-		Dir["#{PROJECT_ROOT}/#{platform}/framework/*.rb"].each { |file| require "#{file}" }
+		Dir["#{PROJECT_ROOT}/#{platform}/framework/**/*.rb"].each { |file| require "#{file}" }
 	end
 
 end

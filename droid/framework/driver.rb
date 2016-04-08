@@ -4,7 +4,7 @@ class Driver
 	include InteractionHelper
 	include Calabash::Android::Operations
 	@@DRIVER = nil
-	PLATFORM = :droid
+	PLATFORM ||= :droid
 
 	def self.platform
 		Platform::ANDROID

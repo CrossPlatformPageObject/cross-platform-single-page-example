@@ -2,7 +2,7 @@ require 'calabash-android/cucumber'
 require_relative '../support/file_inclusion'
 require_relative '../support/page_building_helper'
 
-APK_PATH = 'prebuilt/Foodoo.apk'
+APK_PATH ||= 'prebuilt/Foodoo.apk'
 
 FileInclusion.require_common_files
 FileInclusion.require_platform_specific_files 'droid'

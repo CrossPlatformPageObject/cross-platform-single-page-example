@@ -1,6 +1,6 @@
 require 'calabash-android/operations'
 
-INSTALLATION_STATE = {
+INSTALLATION_STATE ||= {
 	:installed => false
 }
 

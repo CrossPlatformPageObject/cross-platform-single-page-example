@@ -1,18 +1,18 @@
 require 'watir-webdriver'
 require_relative '../../support/file_inclusion'
 
-DRIVER_PATH  = "#{FileInclusion::PROJECT_ROOT}/prebuilt/chromedriver_mac"
 
 def create_driver
-	Selenium::WebDriver::Chrome::Service.executable_path = DRIVER_PATH
+	driver_path  = "#{FileInclusion::PROJECT_ROOT}/prebuilt/chromedriver_mac"
+	Selenium::WebDriver::Chrome::Service.executable_path = driver_path
 	prefs = {
 		download: {
 			prompt_for_download: false,
-			default_directory:   DRIVER_PATH
+			default_directory:   driver_path
 		}
 	}
-	B = Watir::Brw.new :chrome, :prefs => prefs
-	B
+	browser = Watir::Browser.new :chrome, :prefs => prefs
+	browser
 end
 
 B = create_driver

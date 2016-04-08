@@ -2,8 +2,8 @@ class Driver
 	include Cucumber::RbSupport::RbWorld
 
 	@@DRIVER         = nil
-	DRIVER_KEY       = :web
-	XPATH_IDENTIFIER = '//'
+	DRIVER_KEY       ||= :web
+	XPATH_IDENTIFIER ||= '//'
 
 	def self.platform
 		Platform::WEB
