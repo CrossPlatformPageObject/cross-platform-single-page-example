@@ -19,7 +19,7 @@ class Driver
 
 	def click(id_map)
 		locator = id_map[DRIVER_KEY]
-		return if locator.empty?
+		return if locator.nil?
 		B.element(locator).wait_until_present
 		B.element(locator).click
 	end

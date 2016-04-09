@@ -23,7 +23,7 @@ class Driver
 
 	def click(id_map)
 		locator = id_map[driver_key]
-		return if locator.empty?
+		return if locator.nil?
 		touch_element locator
 	end
 
