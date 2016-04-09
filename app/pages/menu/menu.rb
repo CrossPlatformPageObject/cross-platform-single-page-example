@@ -1,11 +1,11 @@
 class Menu < Page
 
-	FOOD_ITEMS = 'Food Item'
+	FOOD_ITEMS = 'Food Items'
 	CART_ITEM  = 'Cart'
 
 	def initialize
 		@id = PageId.new({
-			                 :web   => "//div[@id='home']//ul[@id='home_options']",
+			                 :web   => { text: 'Food Items' },
 			                 :ios   => "tabBarButtonLabel marked:'Book'",
 			                 :droid => "* contentDescription:'Open navigation drawer'"
 		                 })
@@ -30,6 +30,7 @@ class Menu < Page
 	end
 
 	def launch(item_name)
+		show
 		menu_item = @menu_items[item_name]
 		show_secondary if menu_item.is_secondary?
 		menu_item.click
