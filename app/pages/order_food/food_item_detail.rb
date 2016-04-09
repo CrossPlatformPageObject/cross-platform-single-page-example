@@ -1,7 +1,7 @@
 class FoodItemDetail < Page
   def initialize
     @id         = PageId.new({
-                              web:   {text: 'Food Description'},
+                              web:   {text: 'Food Details'},
                               ios:   "UILabel {text CONTAINS 'Food Items'}index:0",
                               droid: "* id:'vgFoodItemDetails'"
                              })
