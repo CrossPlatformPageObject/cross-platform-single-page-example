@@ -20,6 +20,7 @@ B = create_driver
 Before do |scenario|
 	B.cookies.clear
 	B.goto 'http://localhost:3000'
+	B.refresh
 	Watir::Wait.until {B.ready_state == 'complete'}
 end
 
