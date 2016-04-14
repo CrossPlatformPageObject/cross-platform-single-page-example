@@ -21,7 +21,7 @@ class Driver
 		locator = id_map[DRIVER_KEY]
 		return if locator.nil?
 		B.element(locator).wait_until_present
-		B.element(locator).click
+		B.element(locator).click if B.element(locator).present?
 	end
 
 	def exists?(id_map, wait=true)
@@ -36,8 +36,14 @@ class Driver
 		end
 	end
 
+	def text(id_map)
+		locator = id_map[driver_key]
+		B.elements(locator).map &:text if B.element(locator).present?
+	end
+
 	def back
 		B.back
+		sleep(3)
 	end
 
 	private
