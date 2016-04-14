@@ -30,11 +30,12 @@ class Element
 	protected
 	def interpolate_locators_with_params(*values)
 		expanded_locators = {}
-		values = values.flatten
+	values            = values.flatten
 		@id_map.each do |k, locator|
-			locator = locator % values if locator.is_a?(String)
-			locator = locator.each{|k,v| locator[k] = v % values} if locator.is_a?(Hash)
-			expanded_locators[k] =  locator
+			temp_locator         = locator.clone
+			temp_locator         = temp_locator % values if locator.is_a?(String)
+			temp_locator         = temp_locator.each { |k, v| temp_locator[k] = v % values } if temp_locator.is_a?(Hash)
+			expanded_locators[k] = temp_locator
 		end
 		expanded_locators
 	end

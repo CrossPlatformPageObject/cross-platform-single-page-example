@@ -1,6 +1,5 @@
 require 'timeout'
 require_relative 'transitional'
-
 class TransitionElement < Element
 	include Transitional
 
