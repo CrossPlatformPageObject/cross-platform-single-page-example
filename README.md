@@ -58,13 +58,12 @@ So clearly, having seperate pages for different platforms, doesn't seem to go we
 
     As the ecosystem is different for platforms, they way we identify locator will be different. Also, despite being same screen, locator can be different.
 4. Different UI navigation pattern
-
     Each platform gives different UI component. We have Tab bar in iOS, navigation drawer in Android and Nav bar serves similar purpose for web. 
 
 We gave it a try and solved above problems one by one. 
 
 1. Different locator
-```ruby
+```ruby 
  {
     web: "#Food Items:"
     droid: "* id:'FoodItems'"
@@ -73,11 +72,11 @@ We gave it a try and solved above problems one by one.
    
 ```
 2. Different UI actions and different automation tool 
-Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
-So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
-Here the goal is to create a consistent API for all platforms and page will call those API.  With this design our code becomes agnostic of the framework used underneath.
+    Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
+    So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
+    Here the goal is to create a consistent API for all platforms and page will call those API.  With this design our code becomes agnostic of the framework used underneath.
 
-This implementation is doen by conditionally invoking different `driver` for different platforms. 
+This implementation is done by conditionally invoking different `driver` for different platforms. 
 If you look out in the project, you will find 3 driver files, which represent 3 different platforms. 
 
 ![Driver Implementation ](./driver.jpg)
