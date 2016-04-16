@@ -76,9 +76,10 @@ We gave it a try and solved above problems one by one.
    
 ```
 2. Different UI actions and different automation tool 
+
     Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
     So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
-    Here the goal is to create a consistent API for all platforms and page will call those API.  With this design our code becomes agnostic of the framework used underneath.
+    Here the goal is to create a consistent API for all platforms and page will call those API. With this design our code becomes agnostic of the framework used underneath.
 
 This implementation is done by conditionally invoking different `driver` for different platforms. 
 If you look out in the project, you will find 3 driver files, which represent 3 different platforms. 
@@ -86,6 +87,15 @@ If you look out in the project, you will find 3 driver files, which represent 3 
 ![Driver Implementation ](./driver.jpg)
 
 The biggest advantage of this approach is that we write our tests only once for either of the frameworks. 
+
+
+### Element 
+
+### Page template 
+
+### Folder structure 
+
+### Navigation Pattern solved. 
 
 ## Commands to run:
 
