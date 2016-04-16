@@ -26,6 +26,9 @@ Given cross platform apps and in rapid development cycle, we expect our automati
 
     In this case, strategy pattern is used, a slight variation of above example. Still a very similar appraoch, different pages indicate different platforms.
     
+3. [Screen Object pattern](https://rubygemtsl.com/2014/01/06/designing-maintainable-calabash-tests-using-screen-objects-2/)
+
+
 ### Solution analysis of above solutions:
 
 If we look at above examples, they have used Page Object pattern and tried to bring the discipline. 
@@ -58,6 +61,7 @@ So clearly, having seperate pages for different platforms, doesn't seem to go we
 
     As the ecosystem is different for platforms, they way we identify locator will be different. Also, despite being same screen, locator can be different.
 4. Different UI navigation pattern
+
     Each platform gives different UI component. We have Tab bar in iOS, navigation drawer in Android and Nav bar serves similar purpose for web. 
 
 We gave it a try and solved above problems one by one. 
