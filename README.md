@@ -6,16 +6,14 @@ We faced problem in automating flows on multiple platforms. We tried to solve on
 
 
 ## Page Object pattern 
-Cucumber has a concept of global state which is typically accessed by all tests rampantly. This is significantly detrimental to the overall health of the behavior tests and results in a code mess up. We use the Page Object pattern to bring structure and predictability in our tests. This helps us define a few conventions and curate them better over a period of time. It also helps in reusability of steps and flows across tests. [Here’s](http://martinfowler.com/bliki/PageObject.html) a simplified explanation of page object in terms of web apps by Martin Fowler. 
+Cucumber has a concept of global state which is typically accessed by all tests. This is significantly detrimental to the overall health of the behavior tests and results in a code mess up. We use the Page Object pattern to bring structure and predictability in our tests. This helps us define a few conventions and curate them better over a period of time. It also helps in reusability of steps and flows across tests. [Here’s](http://martinfowler.com/bliki/PageObject.html) a simplified explanation of page object in terms of web apps by Martin Fowler. 
 
-## A little context,..
+## Automation expectations
 
-In rapid development cycle, we expect our automation cycle to work fast. That means: 
+Given cross platform apps and in rapid development cycle, we expect our automation cycle to work fast. That means: 
 
 1. It should be easier to add automation across platforms. 
-
 2. Modification should be simpler. Being different platform, the functionality remains similar across platforms. If this is the case, we should not end up modifying same code across the different platforms.
-
 3. Should reuse the code as much as possible.
 
 
@@ -47,13 +45,13 @@ If we look at above examples, they have used Page Object pattern and tried to br
   
 4. Adding new automation/modification
     
-If similar functionality will be developed for all platforms, then we will end up writing 'n' number of pages for 'n' platforms and at the end, repeating ourself!
+    If similar functionality will be developed for all platforms, then we will end up writing 'n' number of pages for 'n' platforms and at the end, repeating ourself!
  
 
 So clearly, having seperate pages for different platforms, doesn't seem to go well with out need. To avoid all above mentioned problems, we came up with a problem statement:
 > Create a cross platform mobile UI automation framework which will work seemlessly across different platforms.
 
-## Challenges in implementating Single page for different platforms: 
+### Challenges in implementating Single page for different platforms: 
 
 1. Different automation tool 
 
@@ -73,6 +71,7 @@ So clearly, having seperate pages for different platforms, doesn't seem to go we
 
 We gave it a try and solved above problems one by one. 
 
+### 
 
 ## Commands to run:
 
