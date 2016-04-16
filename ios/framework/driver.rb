@@ -7,7 +7,7 @@ class Driver
 	include InteractionHelper
 
 	@@DRIVER = nil
-	PLATFORM = :ios
+	PLATFORM ||= :ios
 
 	def self.platform
 		Platform::IOS
