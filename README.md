@@ -54,13 +54,21 @@ So clearly, having seperate pages for different platforms, doesn't seem to go we
 > Create a cross platform mobile UI automation framework which will work seemlessly across different platforms.
 
 ## Challenges in implementating Single page for different platforms: 
+
 1. Different automation tool 
+
     Consider platforms, iOS, android, mobile web. Each API will expose different services for same action. 
+
 2. Differnt UI actions 
+
     `click` is for web whereas similar action for other platform is, `touch`
+
 3. Locator 
+    
     As the ecosystem is different for platforms, they way we identify locator will be different. Also, despite being same screen, lcoators can be different. 
+
 4. Different UI navigation pattern
+    
     Each platform gives different UI component. We have Tab bar in iOS, navigation drawer in Android and Nav bar serves similar purpose for web. 
 
 We gave it a try and solved above problems one by one. 
