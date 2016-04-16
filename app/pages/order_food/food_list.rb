@@ -3,7 +3,7 @@ class FoodList < Page
 		@id        = PageId.new({
 			                        web:   { text: 'Food Items:' },
 			                        ios:   "* title:'Food Items'",
-			                        droid: ""
+			                        droid: "* id:'lvFoodItems'"
 		                        })
 		@food_item = Field.transition_element({
 			                                      web:   { link_text: '%s' },

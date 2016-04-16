@@ -24,7 +24,28 @@ class Driver
 	def click(id_map)
 		locator = id_map[driver_key]
 		return if locator.nil?
+		binding.pry
 		touch_element locator
 	end
 
+	def exists?(id_map, wait=true)
+		begin
+			locator = id_map[PLATFORM]
+			return false if locator.nil?
+			opts.merge!(:screenshot_on_error => false)
+			wait_for_elements_exist([locator], opts)
+			element_exists locator
+		rescue WaitError
+			false
+		end
+	end
+
+	def back
+		press_back_button
+		sleep(0.3)
+	end
+
+	def text
+
+	end
 end
