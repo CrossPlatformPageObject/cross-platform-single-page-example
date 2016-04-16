@@ -33,17 +33,21 @@ In rapid development cycle, we expect our automation cycle to work fast. That me
 
 If we look at above examples, they have used Page Object pattern and tried to bring the discipline. 
 
-* Too many pages
- In our case, we have approx 60 screens for ios and android and 30 screens for web. If we try to implement different pages for different platforms, we will end up having 150 classes, a classic class explosion problem! Maintainence and modification will become a nightmare! 
- 
-* Reusing the code
-  As there will be different [ages, we will end up haing similar services for each of the page. 
+1. Too many pages
 
-* Making change at one place! 
-  Well, it won't be that way. 
+    In our case, we have approx 60 screens for ios and android and 30 screens for web. If we try to implement different pages for different platforms, we will end up having 150 classes, a classic class explosion problem! Maintainence and modification will become a nightmare! 
+ 
+2. Reusing the code
+    
+    As there will be different [ages, we will end up haing similar services for each of the page. 
+
+3. Making change at one place! 
+    
+    It's not at all possible to change at oen and it will work for other platforms. We will have to update all platform specific pages to make this work.
   
-* Adding new automation / modification
-  If similar functionality will be developed for all platforms, then we will end up writing n number of pages for n platforms and at the end, repeating ourself!
+4. Adding new automation / modification
+    
+If similar functionality will be developed for all platforms, then we will end up writing n number of pages for n platforms and at the end, repeating ourself!
  
 
 To avoid all above mentioned problems, we came up with a problem statement:
