@@ -7,11 +7,11 @@ class Menu < Page
 		@id = PageId.new({
 			                 :web   => { text: 'Food Items' },
 			                 :ios   => "tabBarButtonLabel marked:'Book'",
-			                 :droid => "* contentDescription:'Open navigation drawer'"
+			                 :droid => "* marked:'FoodX Droid'"
 		                 })
 
-		@navigation_menu           = Field.transition_element({ droid: "* contentDescription:'Open navigation drawer'" }, { default: self })
-		@navigation_secondary_menu = Field.transition_element({ ios: "* marked:'More'" }, { default: self })
+		@navigation_menu           = Field.transition_element({ droid: "* contentDescription:'Open navigation drawer'" }, { to: Menu })
+		@navigation_secondary_menu = Field.transition_element({ ios: "* marked:'More'" }, { default: Menu })
 
 		@menu_items = {
 			FOOD_ITEMS => MenuItem.new(FOOD_ITEMS, FoodList),

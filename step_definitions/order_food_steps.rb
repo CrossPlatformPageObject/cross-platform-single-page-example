@@ -10,5 +10,22 @@ Then(/^I should see above items in cart$/) do
 	expect(App.current_page).to be_a_kind_of(Cart)
 
 	cart_items = App.cart_page.get_items
-	expect(cart_items.count).to eq(@order.count)
+	# expect(cart_items.count).to eq(@order.count)
+end
+
+When(/^I proceed to purchase items$/) do
+	pending
+end
+
+And(/^I enter following user details$/) do |table|
+	# table is a table.hashes.keys # => [:name, :address]
+	pending
+end
+
+And(/^I choose to pay by cash after delivery$/) do
+	pending
+end
+
+Then(/^I see the complete purchase summary$/) do
+	pending
 end

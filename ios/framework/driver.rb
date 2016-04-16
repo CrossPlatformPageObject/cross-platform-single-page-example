@@ -24,7 +24,6 @@ class Driver
 	def click(id_map)
 		locator = id_map[driver_key]
 		return if locator.nil?
-		binding.pry
 		touch_element locator
 	end
 

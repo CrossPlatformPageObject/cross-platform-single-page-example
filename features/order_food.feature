@@ -7,10 +7,12 @@ Feature: As a user, I should be able to order food with different payment option
       | Dosa          | 1        |
       | Filter Coffee | 1        |
     Then I should see above items in cart
-#    When I proceed to purchase items
-#    And I enter following user details
-#      | name | address  |
-#      | XYZ  | Kp, Pune |
+    When I proceed to purchase items
+    And I enter following user details
+      | name | address  |
+      | XYZ  | Kp, Pune |
+    And I choose to pay by cash after delivery
+    Then I see the complete purchase summary
 
 
 

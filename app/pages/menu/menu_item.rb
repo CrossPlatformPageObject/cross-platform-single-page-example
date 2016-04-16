@@ -9,12 +9,12 @@ class MenuItem
 		@type        = type
 		@menu_button = Field.transition_element(
 			{
-				:web   => { text: "#{@name}" },
-				:ios   => "label marked:'#{@name}'",
-				:droid => "#{@name}"
+				web:   { text: "#{@name}" },
+				ios:   "label marked:'#{@name}'",
+				droid: "* marked:'#{@name}'"
 			},
 			{
-				:to => @page
+				to: @page
 			})
 	end
 
