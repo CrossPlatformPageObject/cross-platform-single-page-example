@@ -47,4 +47,13 @@ class Driver
 	def text
 
 	end
+
+	def enter_text(value, id_map)
+
+	end
+
+	def select_radio_button_by_value(id_map)
+		locator = id_map[driver_key]
+	end
+
 end

@@ -38,11 +38,6 @@ class Driver
 		touch_element locator
 	end
 
-	def click_menu(id_map)
-		locator = id_map[driver_key]
-		tap_mark locator
-	end
-
 	def back
 		press_back_button
 		sleep(0.3)
@@ -53,4 +48,15 @@ class Driver
 		query(locator, :text)
 	end
 
+	def enter_text(value, id_map)
+		locator = id_map[driver_key]
+		wait_for_element_to_appear(locator)
+		query(locator, :setText => value)
+	end
+
+	def select_radio_button_by_value(id_map)
+		locator = id_map[driver_key]
+		wait_for_element_to_appear(locator)
+		query(locator, :setChecked => true)
+	end
 end

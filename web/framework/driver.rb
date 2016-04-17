@@ -46,6 +46,14 @@ class Driver
 		sleep(3)
 	end
 
+	def enter_text(value, id_map)
+
+	end
+
+	def select_radio_button_by_value(id_map)
+		locator = id_map[driver_key]
+	end
+
 	private
 	def get_selector(locator)
 		(locator.start_with? XPATH_IDENTIFIER) ? :xpath : :css
