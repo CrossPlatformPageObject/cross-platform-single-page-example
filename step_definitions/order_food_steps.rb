@@ -14,18 +14,18 @@ Then(/^I should see above items in cart$/) do
 end
 
 When(/^I proceed to purchase items$/) do
-	pending
+	App.cart_page.proceed_to_purchase
 end
 
-And(/^I enter following user details$/) do |table|
-	# table is a table.hashes.keys # => [:name, :address]
-	pending
+And(/^I enter following user details$/) do |user_table|
+	user_data = user_table.hashes.first
+	App.user_details_page.submit_user_details(user_data['name'], user_data['address'])
 end
 
 And(/^I choose to pay by cash after delivery$/) do
-	pending
+	App.payment_preference_page.pay_by_cash_and_proceed
 end
 
 Then(/^I see the complete purchase summary$/) do
-	pending
+	expect(App.current_page).to be_a_kind_of(PurchaseSummary)
 end

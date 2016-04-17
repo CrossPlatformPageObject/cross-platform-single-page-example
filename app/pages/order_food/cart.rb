@@ -16,8 +16,8 @@ class Cart < Page
 			                                    droid: "* id:'btnCheckout'",
 			                                    ios:   '',
 			                                    web:   ''
-		                                    },{
-			                                     to: UserDetails
+		                                    }, {
+			                                    to: UserDetails
 		                                    })
 		super('cart')
 	end
