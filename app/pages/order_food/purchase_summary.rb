@@ -1,7 +1,7 @@
 class PurchaseSummary < Page
 	def initialize
 		@id = PageId.new({
-			                 web:   "",
+			                 web:   {text: 'Purchase Summary'},
 			                 ios:   "",
 			                 droid: "* id:'tvPurchaseSummary'"
 		                 })

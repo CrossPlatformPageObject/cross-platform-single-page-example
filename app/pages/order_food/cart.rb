@@ -15,7 +15,7 @@ class Cart < Page
 		@proceed = Field.transition_element({
 			                                    droid: "* id:'btnCheckout'",
 			                                    ios:   '',
-			                                    web:   ''
+			                                    web:   {id: 'checkout'}
 		                                    }, {
 			                                    to: UserDetails
 		                                    })

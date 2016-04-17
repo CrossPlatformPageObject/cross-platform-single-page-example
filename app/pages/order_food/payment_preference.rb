@@ -5,19 +5,19 @@ class PaymentPreference < Page
 
 	def initialize
 		@id = PageId.new({
-			                 web:   "",
+			                 web:   { text: 'Payment Preference' },
 			                 ios:   "",
 			                 droid: "* id:'tvPaymentMethod'"
 		                 })
 
 		@cash_radio_button = Field.radio_button({
-			                                         web:   "",
+			                                         web:   { id: 'cash' },
 			                                         ios:   "",
 			                                         droid: "* id:'radio_cash'"
 		                                         })
 
 		@submit_payment_preference = Field.transition_element({
-		                            web:    "",
+		                            web:    {id: 'proceed'},
 		                            ios:    "",
 		                            droid:  "* id:'btnPaymentPreference'"
 		                           },
