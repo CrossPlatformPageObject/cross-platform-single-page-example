@@ -12,4 +12,8 @@ class Field
 		Textbox.new(id_map)
 	end
 
+	def self.radio_button(id_map)
+		RadioButton.new(id_map)
+	end
+
 end
