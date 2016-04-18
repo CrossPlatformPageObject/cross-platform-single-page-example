@@ -104,16 +104,41 @@ The biggest advantage of this approach is that we write our tests only once for 
 
 ### A typical top-level directory layout
 
+Directory structure:
+```
+├── app/
+│   ├── models
+│   ├── page
+│   ├── |──page_registry                            # Page residtry which will hold reference to all pages
+│   ├── |──page                                     # Base page for all the pages        
+│   ├── pages                                       # All the pages in the app will be created here        
+│  
+│── framwework/                                     # Have all elements (element, radio_button, textbox etc)
+│   │   ├── elements                                # These elements will delegate any action to driver
+│   │   ├── ├── textbox
+│   │   ├── ├── radio_button
+│   │   ├── ├── ....
+|
+│   ios                                             # This folder will be included only when ios specific tests are invoked
+│   │   ├── driver.rb                               # ios Specific driver, which will interact with UI elemenets
+│   │   ├── env.rb                                  # env.rb, This load require files needed to execute ios tests
+│   │   ├── app_life_cycle_hooks                    # Handles before and after hooks for scenarios.
+│   
+│   droid                                           # This folder will be included only when droid specific tests are invoked
+│   │   ├── driver.rb                               # ios Specific driver, which will interact with UI elemenets
+│   │   ├── env.rb                                  # env.rb, This load require files needed to execute droid tests
+│   │   ├── app_life_cycle_hooks                    # Handles before and after hooks for scenarios.
+|
+│   web                                             # This folder will be included only when web specific tests are invoked
+│   │   ├── driver.rb                               # web Specific driver, which will interact with UI elemenets
+│   │   ├── env.rb                                  # env.rb, This load require files needed to execute droid tests
+│   │   ├── life_cycle_hooks                        # Handles before and after hooks for scenarios.
+|
+│   rake_tasks
+│   │   ├── page_template                           # Page template to create page 
+│   │   ├── run_test  
+```
 
-
-    .
-    ├── app                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── src                     # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
-    ├── tools                   # Tools and utilities
-    ├── LICENSE
-    └── README.md
 
 > Use short lowercase names at least for the top-level files and folders except
 > `LICENSE`, `README.md`
