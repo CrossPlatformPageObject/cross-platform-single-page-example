@@ -5,10 +5,10 @@ An automation, rather a test code, which does not go to a production but it is a
 We faced problem in automating flows on multiple platforms. We tried to solve one problem at a time and came up with this solution.
 
 
-## Page Object pattern 
+### Page Object pattern 
 Cucumber has a concept of global state which is typically accessed by all tests. This is significantly detrimental to the overall health of the behavior tests and results in a code mess up. We use the Page Object pattern to bring structure and predictability in our tests. This helps us define a few conventions and curate them better over a period of time. It also helps in reusability of steps and flows across tests. [Here’s](http://martinfowler.com/bliki/PageObject.html) a simplified explanation of page object in terms of web apps by Martin Fowler. 
 
-## Automation expectations
+### Automation expectations
 
 Given cross platform apps and in rapid development cycle, we expect our automation cycle to work fast. That means: 
 
@@ -67,15 +67,22 @@ So clearly, having seperate pages for different platforms, doesn't seem to go we
 We gave it a try and solved above problems one by one. 
 
 1. Different locator
-```ruby 
- {
-    web: "#Food Items:"
-    droid: "* id:'FoodItems'"
-    ios: "* title:'Food Items'"
- }
+     ```ruby 
+     {
+        web: "#Food Items:"
+        droid: "* id:'FoodItems'"
+        ios: "* title:'Food Items'"
+     }
    
-```
-2. Different UI actions and different automation tool 
+     ```
+
+2. Element Abstraction
+
+   As page should be platform agnostic 
+
+
+
+3.Different UI actions and different automation tool 
 
     Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
     So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
@@ -89,7 +96,6 @@ If you look out in the project, you will find 3 driver files, which represent 3 
 The biggest advantage of this approach is that we write our tests only once for either of the frameworks. 
 
 
-### Element 
 
 ### Page template 
 
@@ -98,8 +104,10 @@ The biggest advantage of this approach is that we write our tests only once for 
 
 ### A typical top-level directory layout
 
+
+
     .
-    ├── build                   # Compiled files (alternatively `dist`)
+    ├── app                   # Compiled files (alternatively `dist`)
     ├── docs                    # Documentation files (alternatively `doc`)
     ├── src                     # Source files (alternatively `lib` or `app`)
     ├── test                    # Automated tests (alternatively `spec` or `tests`)
