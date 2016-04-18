@@ -80,9 +80,7 @@ We gave it a try and solved above problems one by one.
 
    As page should be platform agnostic 
 
-
-
-3.Different UI actions and different automation tool 
+3. Different UI actions and different automation tool 
 
   Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
   So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
