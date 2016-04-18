@@ -142,16 +142,12 @@ Well, this setup is the crux of the framework. Once this is done, page creation 
 
 ## Commands to run:
 
-1. For web:
+```ruby
+    rake run:droid      # For android
+    rake run:ios        # For ios
+    rake run:web        # For mobile web
+```
+For android and ios, the default apps are present in `prebuilt` directory. For web, we need to checkcout web project and start that project locally. 
 
-`bundle exec cucumber -r web`
-
-2. For iOS:
-
-`bundle exec cucumber -p ios`
-
-3. For android:
-
-`calabash-android run prebuilt/FoodX-droid.apk -p android`
 
 For more information check out [blog](https://pritibiyani.github.io/blog/speaking-at-vodqa-banglore)
