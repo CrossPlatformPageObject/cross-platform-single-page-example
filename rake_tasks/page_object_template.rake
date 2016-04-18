@@ -14,17 +14,13 @@ namespace :page_object do
 		folder_name     = args.folder_name
 		post_class_name = args.post_class_name
 
-		if class_name.nil?
-			class_name = prompt_for_message 'Enter class Name : '
-		end
+		class_name = prompt_for_message 'Enter class Name : ' if class_name.nil?
 
-		if friendly_name.nil?
-			friendly_name = prompt_for_message 'Enter friendly name : '
-		end
+		friendly_name = prompt_for_message 'Enter friendly name : ' if friendly_name.nil?
 
-		if folder_name.nil?
-			folder_name = prompt_for_message 'Enter Folder name : '
-		end
+		folder_name = prompt_for_message 'Enter Folder name : ' if folder_name.nil?
+
+		post_class_name = prompt_for_message 'Enter Page to which you will be navigating after this: ' if post_class_name.nil?
 
 		folder_name     = class_name if folder_name.nil? or folder_name.empty?
 		post_class_name = "''" if post_class_name.nil?
