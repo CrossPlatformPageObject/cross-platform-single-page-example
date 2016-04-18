@@ -84,9 +84,10 @@ We gave it a try and solved above problems one by one.
 
 3.Different UI actions and different automation tool 
 
-    Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
-    So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
-    Here the goal is to create a consistent API for all platforms and page will call those API. With this design our code becomes agnostic of the framework used underneath.
+  Both calabash-android and calabash-ios have similar programmatic apis to tap, touch, scroll and pinch/zoom. However, they are not uniform in naming and implementation underneath.Whereas, watir webdriver is completely different than these two. 
+  So we needed some abstraction layer, which will expose the same API and on the other side, invoke respective tool's action. 
+  
+ Here the goal is to create a consistent API for all platforms and page will call those API. With this design our code becomes agnostic of the framework used underneath.
 
 This implementation is done by conditionally invoking different `driver` for different platforms. 
 If you look out in the project, you will find 3 driver files, which represent 3 different platforms. 
@@ -96,15 +97,8 @@ If you look out in the project, you will find 3 driver files, which represent 3 
 The biggest advantage of this approach is that we write our tests only once for either of the frameworks. 
 
 
-
-### Page template 
-
 ### Folder structure 
-> Folder structure options and naming conventions for software projects
 
-### A typical top-level directory layout
-
-Directory structure:
 ```
 ├── app/
 │   ├── models
@@ -125,7 +119,7 @@ Directory structure:
 │   │   ├── app_life_cycle_hooks                    # Handles before and after hooks for scenarios.
 │   
 │   droid                                           # This folder will be included only when droid specific tests are invoked
-│   │   ├── driver.rb                               # ios Specific driver, which will interact with UI elemenets
+│   │   ├── driver.rb                               # droid Specific driver, which will interact with UI elemenets
 │   │   ├── env.rb                                  # env.rb, This load require files needed to execute droid tests
 │   │   ├── app_life_cycle_hooks                    # Handles before and after hooks for scenarios.
 |
@@ -138,12 +132,13 @@ Directory structure:
 │   │   ├── page_template                           # Page template to create page 
 │   │   ├── run_test  
 ```
-
-
-> Use short lowercase names at least for the top-level files and folders except
-> `LICENSE`, `README.md`
  
 ### Navigation Pattern solved. 
+
+
+
+### Page Template 
+
 
 ## Commands to run:
 
