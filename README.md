@@ -78,7 +78,20 @@ We gave it a try and solved above problems one by one.
 
 2. Element Abstraction
 
-   As page should be platform agnostic 
+   Even though page should be platform agnostic, but locators for different platform will vary. Each element is specified by agin same hashmap as above, where key is platform and value is locator. 
+   This is how textbox element intialization will be:
+   ```ruby
+   @username = Textbox.new({
+                            web: "#username",
+                            droid: "* id:'username'",
+                            ios: "* id:'user_name'"
+                          })    
+                          
+    # Textbox specific methods will be available on this. 
+    
+    @username.set_text "some_text"
+    text = @username.get_text
+   ```
 
 3. Different UI actions and different automation tool 
 
