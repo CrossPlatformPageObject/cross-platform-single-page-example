@@ -135,8 +135,10 @@ The biggest advantage of this approach is that we write our tests only once for 
 
 
 
-### Page Template 
+### Once this seup done, what next?
+Well, this setup is the crux of the framework. Once this is done, page creation for different platform is a very simple task. 
 
+![Page Creation](./template.gif)
 
 ## Commands to run:
 
