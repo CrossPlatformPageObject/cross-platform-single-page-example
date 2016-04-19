@@ -11,7 +11,7 @@ class PaymentPreference < Page
 		                 })
 
 		@cash_radio_button = Field.radio_button({
-			                                         web:   { id: 'cash' },
+			                                         web:   { id: 'label_cash' },
 			                                         ios:   "",
 			                                         droid: "* id:'radio_cash'"
 		                                         })

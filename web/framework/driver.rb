@@ -53,10 +53,7 @@ class Driver
 
 	def select_radio_button_by_value(id_map)
 		locator = id_map[driver_key]
-		r = B.radio locator
-		B.element(locator).set
-		r.set if r.present?
-		expect(r.set?).to eq(true)
+		B.element(locator).click if B.element(locator).present?
 	end
 
 	private
