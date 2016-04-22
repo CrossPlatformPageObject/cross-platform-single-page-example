@@ -2,7 +2,7 @@ class FoodItemDetail < Page
 	def initialize
 		@id = PageId.new({
 			                 web:   { text: 'Food Details' },
-			                 ios: '* UITableViewLabel',
+			                 ios:   "* label marked:'Add to Cart'",
 			                 droid: "* id:'vgFoodItemDetails'"
 		                 })
 

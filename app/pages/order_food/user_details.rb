@@ -8,12 +8,12 @@ class UserDetails < Page
 
 		@user_name      = Field.textbox({
 			                                web:   { id: 'name' },
-			                                ios:   "UITextFieldLabel marked:'Address'",
+			                                ios:   "UITextFieldLabel marked:'Fullname'",
 			                                droid: "* id:'tvName'"
 		                                })
 		@user_address   = Field.textbox({
 			                                web:   { id: 'address' },
-			                                ios:   "UITextFieldLabel marked:'Fullname'",
+			                                ios:   "UITextFieldLabel marked:'Address'",
 			                                droid: "* id:'tvAddress'"
 		                                })
 		@submit_details = Field.transition_element({

@@ -2,7 +2,7 @@ class FoodList < Page
 	def initialize
 		@id        = PageId.new({
 			                        web:   { text: 'Food Items:' },
-			                        ios:   "* title:'Food Items'",
+			                        ios:   "UINavigationBar marked:'Food Items'",
 			                        droid: "* id:'lvFoodItems'"
 		                        })
 		@food_item = Field.transition_element({
