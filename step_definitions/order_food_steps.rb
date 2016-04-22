@@ -28,3 +28,8 @@ end
 Then(/^I see the complete purchase summary$/) do
 	expect(App.current_page).to be_a_kind_of(PurchaseSummary)
 end
+
+And(/^I choose to pay by card$/) do
+	App.payment_preference_page.select_credit_card_and_proceed
+	App.credit_card_page.enter_credit_card_details
+end

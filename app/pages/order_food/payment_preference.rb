@@ -12,6 +12,11 @@ class PaymentPreference < Page
 			                                        ios:   "UILabel marked:'Cash On delivery'",
 			                                        droid: "* id:'radio_cash'"
 		                                        })
+		@credit_radio_button = Field.radio_button({
+			                                        web:   { id: 'label_credit' },
+			                                        ios:   "UILabel marked:'Credit Card'",
+			                                        droid: "* id:'radio_credit'"
+		                                        })
 
 		@submit_payment_preference = Field.transition_element({
 			                                                      web:   { id: 'proceed' },
@@ -19,7 +24,7 @@ class PaymentPreference < Page
 			                                                      droid: "* id:'btnPaymentPreference'"
 		                                                      },
 		                                                      {
-			                                                      to: PurchaseSummary
+			                                                      to: [  PurchaseSummary ]
 		                                                      })
 
 		super('payment preference')
@@ -27,6 +32,11 @@ class PaymentPreference < Page
 
 	def pay_by_cash_and_proceed
 		select_payment @cash_radio_button
+	end
+
+	def select_credit_card_and_proceed
+		binding.pry
+		select_payment @credit_radio_button
 	end
 
 	private
