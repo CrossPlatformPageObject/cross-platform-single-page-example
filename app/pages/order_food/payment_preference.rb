@@ -15,7 +15,7 @@ class PaymentPreference < Page
 
 		@credit_radio_button = Field.radio_button({
 			                                          web:   { id: 'label_credit' },
-			                                          ios:   "",
+			                                          ios:   "UILabel marked:'Credit Card'",
 			                                          droid: "* id:'radio_credit'"
 		                                          })
 
