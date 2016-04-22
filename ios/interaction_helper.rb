@@ -5,7 +5,6 @@ module InteractionHelper
 	end
 
 	def wait_for_element_to_appear(locator)
-		wait_for_none_animating
 		wait_for_elements_exist(locator)
 	end
 
