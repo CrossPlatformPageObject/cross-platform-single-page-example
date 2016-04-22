@@ -24,19 +24,15 @@ namespace :run do
 	end
 
 	desc 'Run web automation'
-	task :web do
+	task :web, :tag do |t, args|
 		begin
-			# cd MOBILE_WEB do
-			# 	sh 'rake web:start_server_in_daemon'
-			# end
-				sh 'bundle exec cucumber -r web'
+			command = 'bundle exec cucumber -r web'
+			command += " --tags #{args[:tag]}" unless args.nil?
+			puts command
+			sh command
 		rescue => ex
 			p ex
 			p ex.backtrace
-		ensure
-			# cd MOBILE_WEB do
-			# 	sh 'rake web:stop_server'
-			# end
 		end
 	end
 end
