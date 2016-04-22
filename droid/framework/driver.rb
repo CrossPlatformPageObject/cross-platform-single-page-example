@@ -21,7 +21,7 @@ class Driver
 	def exists?(id_map)
 		begin
 			return false if id_map[driver_key].blank?
-			wait_for_element_to_appear(id_map[driver_key])
+			# wait_for_element_to_appear(id_map[driver_key])
 			element_exists id_map[driver_key]
 		rescue WaitError
 			false

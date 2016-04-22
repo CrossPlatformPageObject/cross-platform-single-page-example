@@ -28,7 +28,6 @@ class Driver
 		locator = id_map[driver_key]
 		return false if locator.blank?
 		begin
-			B.element(locator).wait_until_present if wait
 			B.element(locator).present?
 		rescue TimeoutError, Selenium::WebDriver::Error::UnhandledAlertError
 			p "exists error #{locator}"

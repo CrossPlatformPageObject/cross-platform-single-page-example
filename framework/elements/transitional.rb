@@ -20,11 +20,11 @@ module Transitional
 		has_error, found_next_page = false, false
 		begin
 			wait_for_element(timeout: 60) do
-				found_next_page = next_pages.any? { |page| page.current_page? false }
+				found_next_page = next_pages.any? { |page| page.current_page?  }
 				has_error       = error_page.has_error? if error_page && found_next_page==false
 				found_next_page or has_error
 			end
-			has_error ? error_page : next_pages.find { |page| page.current_page? false }
+			has_error ? error_page : next_pages.find { |page| page.current_page?  }
 		rescue WaitTimeoutError
 			raise WaitTimeoutError, "None of the next page transitions were found. Checked for: => #{next_page_transitions.join(' ,')}"
 		end
