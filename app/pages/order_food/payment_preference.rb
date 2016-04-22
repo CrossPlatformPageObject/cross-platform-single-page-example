@@ -11,19 +11,19 @@ class PaymentPreference < Page
 		                 })
 
 		@cash_radio_button = Field.radio_button({
-			                                         web:   { id: 'label_cash' },
-			                                         ios:   "",
-			                                         droid: "* id:'radio_cash'"
-		                                         })
+			                                        web:   { id: 'label_cash' },
+			                                        ios:   "",
+			                                        droid: "* id:'radio_cash'"
+		                                        })
 
 		@submit_payment_preference = Field.transition_element({
-		                            web:    {id: 'proceed'},
-		                            ios:    "",
-		                            droid:  "* id:'btnPaymentPreference'"
-		                           },
-		                           {
-		                            to:  PurchaseSummary
-		                           })
+			                                                      web:   { id: 'proceed' },
+			                                                      ios:   "",
+			                                                      droid: "* id:'btnPaymentPreference'"
+		                                                      },
+		                                                      {
+			                                                      to: PurchaseSummary
+		                                                      })
 
 		super('payment preference')
 	end

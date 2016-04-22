@@ -6,18 +6,22 @@ MOBILE_WEB = File.expand_path(File.join(File.dirname(__FILE__), '../../web_food_
 namespace :run do
 
 	desc 'Run ios automation'
-	task :ios do
+	task :ios, :tag do |t, args|
 		begin
-			`bundle exec cucumber -p ios`
+			command = 'bundle exec cucumber -p ios'
+			command += " --tags #{args.tag}" unless args.nil?
+			sh command
 		rescue => ex
 			p ex.backtrace
 		end
 	end
 
 	desc 'Run droid automation'
-	task :droid do
+	task :droid, :tag do |t, args|
 		begin
-			sh 'calabash-android run prebuilt/FoodX-droid.apk -p android'
+			command = 'calabash-android run prebuilt/FoodX-droid.apk -p android'
+			command += " --tags #{args.tag}" unless args.nil?
+			sh command
 		rescue => ex
 			p ex.backtrace
 		end
