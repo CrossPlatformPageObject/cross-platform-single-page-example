@@ -8,8 +8,6 @@ end
 Then(/^I should see above items in cart$/) do
 	App.menu_page.launch Menu::CART_ITEM
 	expect(App.current_page).to be_a_kind_of(Cart)
-	# cart_items = App.cart_page.get_items
-	# expect(cart_items.count).to eq(@order.count)
 end
 
 When(/^I proceed to purchase items$/) do
@@ -27,4 +25,9 @@ end
 
 Then(/^I see the complete purchase summary$/) do
 	expect(App.current_page).to be_a_kind_of(PurchaseSummary)
+end
+
+And(/^I choose to pay by credit card$/) do
+	App.payment_preference_page.select_pay_by_credit
+	App.credit_card_page.enter_credit_card_details
 end
