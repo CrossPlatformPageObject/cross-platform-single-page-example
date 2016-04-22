@@ -3,7 +3,7 @@ class PaymentPreference < Page
 	def initialize
 		@id = PageId.new({
 			                 web:   { text: 'Payment Preference' },
-			                 ios:   "",
+			                 ios:   "UIButton marked:'Proceed'",
 			                 droid: "* id:'tvPaymentMethod'"
 		                 })
 
