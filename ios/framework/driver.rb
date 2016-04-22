@@ -31,8 +31,8 @@ class Driver
 		begin
 			locator = id_map[PLATFORM]
 			return false if locator.nil?
-			# opts.merge!(:screenshot_on_error => false)
-			wait_for_elements_exist([locator])
+			opts = {:screenshot_on_error => false}
+			wait_for_elements_exist([locator], opts)
 			element_exists locator
 		rescue WaitError
 			false
