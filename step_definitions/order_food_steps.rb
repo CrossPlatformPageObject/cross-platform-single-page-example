@@ -8,8 +8,7 @@ end
 Then(/^I should see above items in cart$/) do
 	App.menu_page.launch Menu::CART_ITEM
 	expect(App.current_page).to be_a_kind_of(Cart)
-
-	cart_items = App.cart_page.get_items
+	# cart_items = App.cart_page.get_items
 	# expect(cart_items.count).to eq(@order.count)
 end
 
