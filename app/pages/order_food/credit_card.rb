@@ -33,7 +33,6 @@ class CreditCard < Page
 	end
 
 	def enter_credit_card_details
-		binding.pry
 		@credit_Card.enter_text CREDIT_CARD_NUMBER
 		@cvv_number.enter_text CVV_NUMBER
 		@done_button.click
