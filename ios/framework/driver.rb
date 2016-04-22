@@ -55,6 +55,7 @@ class Driver
 
 	def select_radio_button_by_value(id_map)
 		locator = id_map[driver_key]
+		touch_element locator
 	end
 
 end
