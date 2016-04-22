@@ -2,23 +2,23 @@ class UserDetails < Page
 	def initialize
 		@id = PageId.new({
 			                 web:   { text: 'Enter User details:' },
-			                 ios:   "",
+			                 ios:   "UINavigationItemView marked:'Address'",
 			                 droid: "* id:'tvUserDetails'"
 		                 })
 
 		@user_name      = Field.textbox({
 			                                web:   { id: 'name' },
-			                                ios:   '',
+			                                ios:   "UITextFieldLabel marked:'Address'",
 			                                droid: "* id:'tvName'"
 		                                })
 		@user_address   = Field.textbox({
 			                                web:   { id: 'address' },
-			                                ios:   '',
+			                                ios:   "UITextFieldLabel marked:'Fullname'",
 			                                droid: "* id:'tvAddress'"
 		                                })
 		@submit_details = Field.transition_element({
 			                                           web:   { id: 'payment_button' },
-			                                           ios:   "",
+			                                           ios:   "UIButton marked:'Proceed for Payment'",
 			                                           droid: "* id:'btnProceed'"
 		                                           },
 		                                           {

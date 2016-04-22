@@ -9,13 +9,13 @@ class PaymentPreference < Page
 
 		@cash_radio_button = Field.radio_button({
 			                                        web:   { id: 'label_cash' },
-			                                        ios:   "",
+			                                        ios:   "UILabel marked:'Cash On delivery'",
 			                                        droid: "* id:'radio_cash'"
 		                                        })
 
 		@submit_payment_preference = Field.transition_element({
 			                                                      web:   { id: 'proceed' },
-			                                                      ios:   "",
+			                                                      ios:   "UIButton marked:'Proceed'",
 			                                                      droid: "* id:'btnPaymentPreference'"
 		                                                      },
 		                                                      {

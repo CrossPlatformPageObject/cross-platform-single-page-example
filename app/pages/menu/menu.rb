@@ -6,7 +6,7 @@ class Menu < Page
 	def initialize
 		@id = PageId.new({
 			                 :web   => { text: 'Food Items' },
-			                 :ios   => "tabBarButtonLabel marked:'Book'",
+			                 :ios   => "UITabBarButtonLabel marked:'Food Items'",
 			                 :droid => "* marked:'FoodX Droid'"
 		                 })
 

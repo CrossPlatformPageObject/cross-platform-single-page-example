@@ -2,7 +2,7 @@ class Cart < Page
 	def initialize
 		@id = PageId.new({
 			                 web:   { text: 'Your Purchased Items:' },
-			                 ios:   "",
+			                 ios:   "UIButtonLabel marked:'Checkout'",
 			                 droid: "* {text CONTAINS 'Cart Items'}"
 		                 })
 
@@ -14,7 +14,7 @@ class Cart < Page
 
 		@proceed = Field.transition_element({
 			                                    droid: "* id:'btnCheckout'",
-			                                    ios:   '',
+			                                    ios:   "UIButtonLabel marked:'Checkout'",
 			                                    web:   {id: 'checkout'}
 		                                    }, {
 			                                    to: UserDetails
