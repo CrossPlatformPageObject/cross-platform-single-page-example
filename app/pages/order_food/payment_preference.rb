@@ -1,8 +1,5 @@
 class PaymentPreference < Page
 
-	CASH_PAYMENT   = 'cash'
-	CREDIT_PAYMENT = 'credit'
-
 	def initialize
 		@id = PageId.new({
 			                 web:   { text: 'Payment Preference' },
@@ -29,12 +26,12 @@ class PaymentPreference < Page
 	end
 
 	def pay_by_cash_and_proceed
-		select_payment @cash_radio_button, CASH_PAYMENT
+		select_payment @cash_radio_button
 	end
 
 	private
-	def select_payment(element, payment_method)
-		element.select payment_method
+	def select_payment(element)
+		element.select
 		@submit_payment_preference.click
 	end
 
