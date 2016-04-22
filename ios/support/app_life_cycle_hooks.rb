@@ -1,5 +1,4 @@
 require 'calabash-cucumber/launcher'
-require 'pry'
 
 Before do |scenario|
 	@calabash_launcher = Calabash::Cucumber::Launcher.new
@@ -8,7 +7,8 @@ Before do |scenario|
 		@calabash_launcher.reset_app_jail
 	end
 	unless @calabash_launcher.calabash_no_launch?
-		@calabash_launcher.relaunch()
+		launch_options = {:uia_strategy => :host, }
+		@calabash_launcher.relaunch(launch_options)
 		@calabash_launcher.calabash_notify(self)
 	end
 end
