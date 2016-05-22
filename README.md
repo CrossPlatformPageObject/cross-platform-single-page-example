@@ -1,6 +1,6 @@
 # Cross Platform mobile automation framework 
 
-An automation, rather a test code, which does not go to a production but it is a health matrics of out production code. And when code, you need to follow good practices. (eg. Proper abstraction in place, Reusing code, seperation of concerns etc).
+An automation, rather a test code, which does not go to a production but it is a health matrics of our production code. And when it's code, you need to follow good practices. (eg. Proper abstraction in place, Reusing code, seperation of concerns etc).
 
 We faced problem in automating flows on multiple platforms. We tried to solve one problem at a time and came up with this solution.
 
