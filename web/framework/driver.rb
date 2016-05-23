@@ -42,7 +42,7 @@ class Driver
 
 	def back
 		B.back
-		sleep(3)
+		sleep(0.3)
 	end
 
 	def enter_text(value, id_map)

@@ -15,14 +15,6 @@ class Page
 		false
 	end
 
-	def await
-		begin
-			@driver.await(@id.id_map)
-		rescue WaitTimeoutError
-			raise "Page #{self.class} not found."
-		end
-	end
-
 	def back
 		@driver.back
 	end
