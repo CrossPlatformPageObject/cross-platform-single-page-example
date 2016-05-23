@@ -3,3 +3,4 @@ results/
 .*
 test_servers/*
 *.png
+report/*
