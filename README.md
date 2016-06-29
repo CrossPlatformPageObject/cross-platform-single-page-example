@@ -160,7 +160,24 @@ Well, this setup is the crux of the framework. Once this is done, page creation 
     rake run:ios        # For ios
     rake run:web        # For mobile web
 ```
-For android and ios, the default apps are present in `prebuilt` directory. For web, we need to checkcout web project and start that project locally. 
+
+This project is built on food app developed for each platform. For android and ios, the default apps are present in `prebuilt` directory. For web, we need to checkcout web project and start that project locally. 
+
+1. Web 
+   This need to be run locally. Clone project from [here](https://github.com/CrossPlatformPageObject/web_food_app)
+   It's a rails project. Simplay start `rails s`.
+
+2. ios 
+   ios app is present in the repo itself. Look for [prebuilt directory](https://github.com/CrossPlatformPageObject/cross-platform-single-page-example/tree/master/prebuilt). 
+   This is compatible with Xcode 7.0
+
+   You can find project [here](https://github.com/CrossPlatformPageObject/ios_food_app).
+
+3. android
+   android app is present in [prebuilt directory](https://github.com/CrossPlatformPageObject/cross-platform-single-page-example/tree/master/prebuilt)
+  
+   You can find project [here](https://github.com/CrossPlatformPageObject/android_food_app).
+   
 
 
 For more information check out [blog](https://pritibiyani.github.io/blog/speaking-at-vodqa-banglore)
